@@ -57,7 +57,7 @@ int lomuto_part(int *array, size_t size, int left, int right)
 }
 
 /**
- * lomuto_sort - quicksort algorithm through recursion.
+ * quick_sort_helper - quicksort through recursion.
  * @array: array.
  * @size: size of array.
  * @left: starting index.
@@ -82,7 +82,7 @@ void quick_sort_helper(int *array, size_t size, int left, int right)
  * quick_sort - Sort array of ints in asc order
  *
  * @array: array .
- * @size: size 
+ * @size: size
  */
 
 void quick_sort(int *array, size_t size)
