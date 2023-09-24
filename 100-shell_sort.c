@@ -28,11 +28,11 @@ void shell_sort(int *array, size_t size)
 					tmp = array[i];
 					array[i] = array[i + gap];
 					array[i + gap] = tmp;
-					print_array((const int*)array, size);
 				}
 				else
 					break;
 			}
 		}
+		print_array((const int*)array, size);
 	}
 }
