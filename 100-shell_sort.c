@@ -12,6 +12,9 @@ void shell_sort(int *array, size_t size)
 	size_t gap = 0, i, j;
 	int tmp;
 
+	if (array == NULL || size < 2)
+		return;
+
 	while (gap < size / 3)
 		gap = gap * 3 + 1;
 	for (; gap >= 1; gap = (gap - 1) / 3)
