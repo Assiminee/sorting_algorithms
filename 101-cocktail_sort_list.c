@@ -6,40 +6,20 @@
  * @curr: node to swap
  * @swap_node: node to swap
  */
-void swap(listint_t **list, listint_t **curr, listint_t *swap_node)
+void swap(listint_t **list, listint_t *node1, listint_t *node2)
 {
-	(*curr)->next = swap_node->next;
-	if (swap_node->next)
-		swap_node->next->prev = (*curr);
-	swap_node->prev = (*curr)->prev;
-	swap_node->next = *curr;
-	if ((*curr)->prev)
-		(*curr)->prev->next = swap_node;
+	node1->next = node2->next;
+	if (node2->next)
+		node2->next->prev = node1;
+	node2->prev = node1->prev;
+	node2->next = node1;
+	if (node1->prev)
+		node1->prev->next = node2;
 	else
-		*list = swap_node;
-	(*curr)->prev = swap_node;
+		*list = node2;
+	node1->prev = node2;
 }
 
-/**
- * reverse_swap - swaps adjecent elements starting from the end of the list
- * @list: doubly linked list
- * @curr: node to swap
- * @swap_node: node to swap
- */
-void reverse_swap(listint_t **list, listint_t **curr, listint_t *swap_node)
-{
-	(*curr)->prev = swap_node->prev;
-	if (swap_node->prev)
-		swap_node->prev->next = (*curr);
-	else
-		*list = *curr;
-	if ((*curr)->next)
-		(*curr)->next->prev = swap_node;
-	swap_node->prev = *curr;
-	swap_node->next = (*curr)->next;
-	(*curr)->next = swap_node;
-	*curr = swap_node;
-}
 /**
  * cocktail_sort_list - sorts doubly linked list of ints in ascending order
  * @list: the head of the list
@@ -62,7 +42,7 @@ void cocktail_sort_list(listint_t **list)
 			swap_node = curr->next;
 			if (curr->n > swap_node->n)
 			{
-				swap(list, &curr, swap_node);
+				swap(list, curr, swap_node);
 				curr = swap_node;
 				swapped = true;
 				print_list((const listint_t *)*list);
@@ -76,7 +56,7 @@ void cocktail_sort_list(listint_t **list)
 			swap_node = curr->prev;
 			if (curr->n < swap_node->n)
 			{
-				swap(list, &swap_node, curr);
+				swap(list, swap_node, curr);
 				curr = swap_node;
 				swapped = true;
 				print_list((const listint_t *)*list);
