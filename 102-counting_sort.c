@@ -67,4 +67,5 @@ void counting_sort(int *array, size_t size)
 			continue;
 		array[count[i - 1]] = i;
 	}
+	free(count);
 }
