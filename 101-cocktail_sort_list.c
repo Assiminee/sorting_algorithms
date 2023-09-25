@@ -28,8 +28,7 @@ void swap(listint_t **list, listint_t **curr, listint_t *swap_node)
  * @curr: node to swap
  * @swap_node: node to swap
  */
-void reverse_swap(listint_t **list, listint_t **tail,
-		listint_t **curr, listint_t *swap_node)
+void reverse_swap(listint_t **list, listint_t **curr, listint_t *swap_node)
 {
 	(*curr)->prev = swap_node->prev;
 	if (swap_node->prev)
@@ -38,8 +37,6 @@ void reverse_swap(listint_t **list, listint_t **tail,
 		*list = *curr;
 	if ((*curr)->next)
 		(*curr)->next->prev = swap_node;
-	else
-		*tail = swap_node;
 	swap_node->prev = *curr;
 	swap_node->next = (*curr)->next;
 	(*curr)->next = swap_node;
@@ -84,7 +81,7 @@ void cocktail_sort_list(listint_t **list)
 			swap_node = curr->prev;
 			if (curr->n < swap_node->n)
 			{
-				reverse_swap(list, &tail, &curr, swap_node);
+				reverse_swap(list, &curr, swap_node);
 				swapped = true;
 				print_list((const listint_t *)*list);
 			}
