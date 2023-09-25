@@ -24,7 +24,6 @@ void swap(listint_t **list, listint_t **curr, listint_t *swap_node)
 /**
  * reverse_swap - swaps adjecent elements starting from the end of the list
  * @list: doubly linked list
- * @tail: pointer to the last element of the list
  * @curr: node to swap
  * @swap_node: node to swap
  */
