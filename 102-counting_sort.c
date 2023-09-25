@@ -17,7 +17,7 @@ int largest_int(int *array, size_t size)
 		if (array[i] > max)
 			max = array[i];
 	}
-	return max;
+	return (max);
 }
 
 /**
@@ -33,7 +33,7 @@ int *init_count_array(int size)
 
 	for (i = 0; i < size; i++)
 		count[i] = 0;
-	return count;
+	return (count);
 }
 
 /**
@@ -59,7 +59,7 @@ void counting_sort(int *array, size_t size)
 	for (i = 1; (int)i < k + 1; i++)
 		count[i] += count[i - 1];
 
-	print_array((const int *)count, (size_t)k+1);
+	print_array((const int *)count, (size_t)k + 1);
 
 	for (i = 0; (int)i < k + 1; i++)
 	{
