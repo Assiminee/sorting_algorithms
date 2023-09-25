@@ -50,15 +50,11 @@ void reverse_swap(listint_t **list, listint_t **curr, listint_t *swap_node)
  */
 void cocktail_sort_list(listint_t **list)
 {
-	listint_t *curr, *tail, *swap_node;
+	listint_t *curr, *swap_node;
 	bool swapped = true;
 
 	if (list == NULL || *list == NULL || (*list)->next == NULL)
 		return;
-
-	tail = *list;
-	while (tail->next)
-		tail = tail->next;
 
 	while (swapped)
 	{
