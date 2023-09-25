@@ -3,8 +3,8 @@
 /**
  * swap - swaps adjacent elements from left to right
  * @list: doubly linked list
- * @curr: node to swap
- * @swap_node: node to swap
+ * @node1: node to swap
+ * @node2: node to swap
  */
 void swap(listint_t **list, listint_t *node1, listint_t *node2)
 {
