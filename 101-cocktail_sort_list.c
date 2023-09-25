@@ -66,7 +66,7 @@ void cocktail_sort_list(listint_t **list)
 	while (swapped)
 	{
 		swapped = false;
-		for (curr = *list; curr->next->next != NULL; curr = curr->next)
+		for (curr = *list; curr->next != NULL; curr = curr->next)
 		{
 			swap_node = curr->next;
 			if (curr->n > swap_node->n)
@@ -79,7 +79,7 @@ void cocktail_sort_list(listint_t **list)
 		if (!swapped)
 			break;
 		swapped = false;
-		for (curr = tail; curr->prev->prev != NULL; curr = curr->prev)
+		for (curr = tail; curr->prev != NULL; curr = curr->prev)
 		{
 			swap_node = curr->prev;
 			if (curr->n < swap_node->n)
